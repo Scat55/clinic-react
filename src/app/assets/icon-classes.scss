@@ -1,0 +1,28 @@
+$icon-sizes: (
+ 'lg': (
+  'size': 24px,
+ ),
+ 'md': (
+  'size': 20px,
+ ),
+ 'sm': (
+  'size': 16px,
+ ),
+ 'xxl': (
+  'size': 40px,
+ ),
+);
+
+
+@each $variant_name, $variant in $icon-sizes {
+ svg.icon-#{$variant_name} {
+  width: map-get($variant, 'size') !important;
+  height: map-get($variant, 'size') !important;
+ }
+ .icon-#{$variant_name} {
+  svg {
+   width: map-get($variant, 'size') !important;
+   height: map-get($variant, 'size') !important;
+  }
+ }
+}
